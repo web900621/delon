@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { SFSchema } from './schema/index';
-import { SFUISchemaItem, SFOptionalHelp } from './schema/ui';
+import { SFOptionalHelp, SFUISchemaItem } from './schema/ui';
 
 @Component({
   selector: 'sf-item-wrap',

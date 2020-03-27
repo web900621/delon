@@ -2,7 +2,7 @@ import { ComponentFixture } from '@angular/core/testing';
 import { builder, SFPage, TestFormComponent } from '../../../spec/base.spec';
 import { SFSchema } from '../../../src/schema/index';
 
-describe('form: widget: custom', () => {
+xdescribe('form: widget: custom', () => {
   let fixture: ComponentFixture<TestFormComponent>;
   let context: TestFormComponent;
   let page: SFPage;

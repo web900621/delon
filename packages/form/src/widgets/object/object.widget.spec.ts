@@ -1,10 +1,9 @@
 import { DebugElement } from '@angular/core';
-import { fakeAsync, ComponentFixture } from '@angular/core/testing';
-
+import { ComponentFixture, fakeAsync } from '@angular/core/testing';
 import { createTestContext } from '@delon/testing';
 import { configureSFTestSuite, SFPage, TestFormComponent } from '../../../spec/base.spec';
 
-describe('form: widget: object', () => {
+xdescribe('form: widget: object', () => {
   let fixture: ComponentFixture<TestFormComponent>;
   let dl: DebugElement;
   let context: TestFormComponent;
@@ -36,7 +35,7 @@ describe('form: widget: object', () => {
     expect(ipt.value).toBe('1');
   }));
 
-  describe('#showTitle', () => {
+  xdescribe('#showTitle', () => {
     it('should be hide second title when value is undefined', () => {
       page
         .newSchema({

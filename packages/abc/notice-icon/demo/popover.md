@@ -8,11 +8,11 @@ title: 带浮层卡片
 ```ts
 import { Component } from '@angular/core';
 import { NoticeIconList, NoticeItem } from '@delon/abc/notice-icon';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
-  selector: 'app-demo',
+  selector: 'components-notice-icon-popover',
   template: `
   <div style="text-align: right; height: 64px; line-height: 64px; box-shadow: rgba(0, 21, 41, 0.12) 0 1px 4px; padding: 0 32px; width: 400px;">
     <notice-icon
@@ -25,7 +25,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   </div>
   `,
 })
-export class DemoComponent {
+export class ComponentsNoticeIconPopoverComponent {
 
   data: NoticeItem[] = [
     { title: '通知', list: [], emptyText: '你已查看所有通知', emptyImage: 'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg', clearText: '清空通知' },
@@ -44,14 +44,14 @@ export class DemoComponent {
     notices.forEach(item => {
       const newItem = { ...item };
       if (newItem.datetime)
-        newItem.datetime = distanceInWordsToNow(item.datetime!, { locale: (window as any).__locale__ });
+        newItem.datetime = formatDistanceToNow(item.datetime as Date, { locale: (window as any).__locale__ });
       if (newItem.extra && newItem.status) {
         newItem.color = ({
           todo: undefined,
           processing: 'blue',
           urgent: 'red',
           doing: 'gold',
-        })[newItem.status];
+        } as { [key: string]: string | undefined})[newItem.status];
       }
       data.find(w => w.title === newItem.type)!.list.push(newItem);
     });

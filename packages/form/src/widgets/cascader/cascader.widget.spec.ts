@@ -1,10 +1,10 @@
 import { DebugElement } from '@angular/core';
-import { fakeAsync, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync } from '@angular/core/testing';
 import { createTestContext } from '@delon/testing';
 import { configureSFTestSuite, SFPage, TestFormComponent } from '../../../spec/base.spec';
 import { CascaderWidget } from './cascader.widget';
 
-describe('form: widget: cascader', () => {
+xdescribe('form: widget: cascader', () => {
   let fixture: ComponentFixture<TestFormComponent>;
   let dl: DebugElement;
   let context: TestFormComponent;
@@ -49,7 +49,7 @@ describe('form: widget: cascader', () => {
     expect(page.getEl('.ant-cascader-picker-label').textContent!.trim()).toBe('北京');
   }));
 
-  describe('[data source]', () => {
+  xdescribe('[data source]', () => {
     it('with enum', fakeAsync(() => {
       const data = [
         {
@@ -95,7 +95,7 @@ describe('form: widget: cascader', () => {
     }));
   });
 
-  describe('[events]', () => {
+  xdescribe('[events]', () => {
     it('with defind', fakeAsync(() => {
       page.newSchema({
         properties: {
